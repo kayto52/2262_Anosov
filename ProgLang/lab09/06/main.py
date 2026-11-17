@@ -1,10 +1,10 @@
-def gen(n):
-    yield n
-    while n != 1:
-        if n % 2 == 0:
-            n //= 2
+def gen(x):
+    yield x
+    while x != 1:
+        if x % 2 == 0:
+            x //= 2
         else:
-            n = 3 * n + 1
-        yield n
+            x = 3 * x + 1
+        yield x
 
 print(*gen(7))

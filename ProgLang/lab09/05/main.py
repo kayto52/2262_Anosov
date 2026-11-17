@@ -1,1 +1,6 @@
-print(*map(len, map(str.strip, input().split(','))), sep=', ')
+print(
+    *map(len,
+        map(str.strip,
+            input().split(','))),
+            sep=', '
+            )
