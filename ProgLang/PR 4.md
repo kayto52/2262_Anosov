@@ -51,3 +51,59 @@ for ch in set(s):
 
 print(s.replace(best, ""))
 ```
+
+### Задача 4 – Качество пароля
+```python
+r1 = "1234567890"
+r2 = "qwertyuiop"
+r3 = "asdfghjkl"
+r4 = "zxcvbnm"
+
+n = int(input())
+
+for i in range(n):
+    s = input()
+    f1 = False
+    f2 = False
+    f3 = False
+    f4 = False
+    for ch in s:
+        if ch in r1:
+            f1 = True
+        if ch in r2:
+            f2 = True
+        if ch in r3:
+            f3 = True
+        if ch in r4:
+            f4 = True
+    if f1 and f2 and f3 and f4:
+        print("strong")
+    else:
+        print("weak")
+```
+
+### Задача 5 – Игра в Дурака
+```python
+ranks = ["6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+
+trump = input()
+n = int(input())
+
+ans = []
+
+for i in range(n):
+    v1, s1 = input().split()
+    v2, s2 = input().split()
+
+    p1 = ranks.index(v1)
+    p2 = ranks.index(v2)
+
+    if s1 == s2 and p2 > p1:
+        ans.append(1)
+    elif s2 == trump and s1 != trump:
+        ans.append(1)
+    else:
+        ans.append(0)
+
+print(*ans)
+```
